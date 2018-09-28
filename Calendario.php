@@ -71,7 +71,8 @@
     echo "<caption>";
     echo $meses[$mes]." ".$año;
     echo "</caption>";
-		$count = 1;
+		$day = 1;
+		$count = 0;
 
 		$ultima_celda = $dia_semana + $ultimo_dia_mes;
     foreach($dias as $dia){
@@ -80,14 +81,15 @@
     for($f = 1;$f <= 6; $f++){
 			echo "<tr>";
       for($c = 1; $c <=7; $c++){
-				if ($count <= $dia_semana){
-					$day = 1;
-					echo "<td></td>";
+				if ($count < $dia_semana){
+					echo "<td>&nbsp;</td>";
 				}else{
 					if($day <= $ultimo_dia_mes){
-					echo "<td>".$day."</td>";
-					$day++;
-				}
+						echo "<td>".$day."</td>";
+						$day++;
+					}else{
+						echo "<td>&nbsp;</td>";
+					}
 				}
 				$count++;
       }
