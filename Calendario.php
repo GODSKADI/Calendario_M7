@@ -62,33 +62,38 @@
   <?php
     $mes = date("n");
     $ano = date("Y");
+		$dia_actual = date("j");
     $ultimo_dia_mes = date("t");
-    $dia_semana = date("w", mktime(0,0,0, $mes, 1, $ano));
+    $dia_semana = date("w", mktime(0,0,0, $mes, 0, $ano));
     $dias = array(1=>"Lunae", "Martis", "Mercurii", "Iovis", "Verneris", "Saturni", "Dominica");
     $meses=array(1=>"Ianuarius", "Februarius", "Martius", "Aprilis", "Maius", "Iunius", "Iulius", "Augustus", "September", "Octuber", "November", "December");
 
     echo "<caption>";
     echo $meses[$mes]." ".$año;
     echo "</caption>";
-    echo "<tr>";
+		$count = 1;
 
+		$ultima_celda = $dia_semana + $ultimo_dia_mes;
     foreach($dias as $dia){
       echo "<th>" .$dia."</th>";
     }
-    for($f = 0;$f < 5; $f++){
-      echo "<tr>";
-      if($f == $dia_semana){
-        $primer_dia = 1;
+    for($f = 1;$f <= 6; $f++){
+			echo "<tr>";
+      for($c = 1; $c <=7; $c++){
+				if ($count <= $dia_semana){
+					$day = 1;
+					echo "<td></td>";
+				}else{
+					if($day <= $ultimo_dia_mes){
+					echo "<td>".$day."</td>";
+					$day++;
+				}
+				}
+				$count++;
       }
-
-      for($c = 1; $c < 8; $c++){
-        echo "<td>".$c."</td>";
-      }
-      echo"</tr>";
+			echo "</tr>";
     }
-    echo "</tr>";
 		?>
-
 
 </table>
 </body>
