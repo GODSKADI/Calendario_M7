@@ -37,8 +37,8 @@
         $contador_ingredientes++;
       }
       echo "</p><hr><h3>Precio Final: </h3>";
-      $precio_final = $precio_estadart +$precio_massa + 0.5 * $contador_ingredientes;
-      echo $precio_final ."€";
+      $precio_final = $precio_estadart + $precio_massa + 0.5 * $contador_ingredientes;
+      echo $precio_final ." €";
 
      ?>
   </body>
