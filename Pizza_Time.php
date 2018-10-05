@@ -28,8 +28,8 @@
       $contador_ingredientes = 0;
       $precio_final = 0;
       $precio_massa = 0.5;
+
       echo "<p><b>Massa: </b>". $_POST["massa"]."</p>";
-      $massa = $_POST["massa"].value;
       echo "<p><b>Ingredientes: </b>";
       $ingredientes = $_POST["ingrediente"];
       foreach($ingredientes as $ingrediente){
@@ -38,7 +38,8 @@
       }
       echo "</p><hr><h3>Precio Final: </h3>";
       $precio_final = $precio_estadart +$precio_massa + 0.5 * $contador_ingredientes;
-      echo $precio_final;
+      echo $precio_final ."€";
+
      ?>
   </body>
 </html>
