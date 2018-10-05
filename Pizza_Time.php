@@ -3,6 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Pizza Time</title>
+    <style>
+      h1{
+        text-align: center;
+      }
+      h3{
+        margin-left: 3%;
+      }
+      input, p{
+        margin-left: 10%;
+      }
+      button{
+        margin-left: 80%;
+      }
+      .precioFinal{
+        color: red;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <h1>Prepara tu Pizza</h1>
@@ -38,7 +57,7 @@
       }
       echo "</p><hr><h3>Precio Final: </h3>";
       $precio_final = $precio_estadart + $precio_massa + 0.5 * $contador_ingredientes;
-      echo $precio_final ." €";
+      echo "<p class='precioFinal'>". $precio_final ." €</p>";
 
      ?>
   </body>
