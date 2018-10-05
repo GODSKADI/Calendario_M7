@@ -20,7 +20,7 @@
       <input type="checkbox" name="ingrediente[]" value="Hamburguesa"/>Hamburguesa
       <hr>
       <h3>Tu pedido:
-      <button type="submit" id="pedir">Precio Final</button>
+      <button type="submit" id="pedir">Calcular Precio</button>
       </h3>
     </form>
     <?php
